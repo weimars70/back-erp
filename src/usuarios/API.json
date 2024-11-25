@@ -1,0 +1,75 @@
+{
+    "number":990000116,  //numero de factura enviar para pruebas empezar con el siguiente numero despues de pasar pruebas sera el consecutivo de la resolucion
+    "type_document_id":1, //para Factura electronica lleva el numero 1 factura POS 15 solo tiene habilitado la factura electronica
+    "date":"2024-07-22",  //fecha creacion del documento por normativa debe de ser el mismo dia
+    "time":"14:10:12",  //hora del envio
+    "resolution_number":"18760000001", // para pruebas debe de ir esta en produccion se envia la resolucion de la empresa
+    "prefix":"SETP", //para pruebas se deja el prefijo SETP para produccion el de la resolucion de la empresa
+    "notes":"", //se puede dejar vacio o solocar algun texto quedeseen sacar en la factura
+    "disable_confirmation_text":true, //de deja Igual
+    "establishment_name":"CREDYMANIA", //nombre de la empresa que emite la factura
+    "establishment_address":"ACA DIRECCION", //direccion de la emprea
+    "establishment_phone":"12345678 ", // telefono de la empresa
+    "establishment_municipality":360, //codigo Municipio de la empresa se adjunto archivos con los codigo y nombres
+    "establishment_email":"edwinlopez3008@hotmail.com", //correo de la empresa que emite la factura//
+    "sendmail":true, //se dela igual
+    "sendmailtome":true, //se dela igual
+    "customer":{ //informacion del comprador o a quien va dirigida la factura Cliente
+       "identification_number":98570632, //cedula o nit cliente
+       "dv":6, //digito de verificacion cliente 
+       "name":"ROGELIO WEIMAR SANCHEZ GAVIRIA", //nombre cliente
+       "phone":"3107599957",  //telefono cliente
+       "address":"CRA 24 D 40 SUR 981 INT 108 ENVIGADO", // direccion cliente
+       "email":"weimars70@gmail.com", //correo del cliente
+       "merchant_registration":"0000000-00", //se deja como esta
+       "type_document_identification_id":3, //tipo identificacion cliente  se adjunto archivo con los maestros ejemplo 3.Cédula de ciudadanía 6. NIT
+       "type_organization_id":2, // 1. Persona Jurídica y asimiladas 2. Persona Natural y asimiladas
+       "type_liability_id":117, // ejemplo 117 No responsable 112 Régimen Simple de Tributación – SIMPLE  para ver mas en el archivo maestros que se les envio
+       "municipality_id":47, // id del municipio 
+       "type_regime_id":2, // 1 Responsable de IVA 2. No Responsable de IVA
+       "tax_id":1 // 1. IVA 2. IC 3. ICA para ver mas en el archivo maestros que se les envio
+    },
+    "payment_form":{ // forma de pago
+       "payment_form_id":2, // 1. Contado 2. credito
+       "payment_method_id":10, // methodo de pago  ejemplo 10 efectivo  48 Tarjeta Crédito 49 Tarjeta debito
+       "payment_due_date":"2024-07-22", // fecha del pago
+       "duration_measure":"1" // se deja igual
+    },
+    "legal_monetary_totals":{//valores factura
+       "line_extension_amount":"100000.00", // total
+       "tax_exclusive_amount":"100000.00", // total sin iva
+       "tax_inclusive_amount":"100000.00", //total con Iva
+       "allowance_total_amount":"0.00", //monto total con descuento
+       "payable_amount":"100000.00"  // total pagar
+    },
+    "tax_totals":[ //impuestos
+       {
+          "tax_id":1,
+          "tax_amount":"0.00",
+          "percent":"0.00", // porcentaje si cambia este el tax_amount debe ser mayor a cero
+          "taxable_amount":"100000.00"//base para el calculo del impuestos
+       }
+    ],
+    "invoice_lines":[ //lineas de la factura
+       {
+          "unit_measure_id":70,
+          "invoiced_quantity":"1",
+          "line_extension_amount":"100000.00",
+          "free_of_charge_indicator":false,
+          "tax_totals":[
+             {
+                "tax_id":1,
+                "tax_amount":"0.00",
+                "taxable_amount":"100000.00",//base para calcular el impuesto
+                "percent":"0.00" // si cambia este el tax_amount debe ser mayor a cero
+             }
+          ],
+          "description":"CALZADO BUBBLE GUMMERS",
+          "notes":"",
+          "code":"COMISION",
+          "type_item_identification_id":4,
+          "price_amount":"100000.00",
+          "base_quantity":"1"
+       }
+    ]
+ }
